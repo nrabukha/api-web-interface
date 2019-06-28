@@ -1,0 +1,21 @@
+doctype html
+html
+ head
+  link(rel="stylesheet" href="style.css")
+ body
+  header
+   div
+    .select-collection-panel
+     span Collections: 
+     select#list-collection
+     button#load-collection(onclick="database.getData();") Load
+     button#edit-collection(onclick="setPanelView(selectPanel, htmlElements.editPanel, testFunc);") Edit
+     button#delete-collection(onclick="collections.deleteCollection().getCollection();") Delete
+   div
+     .open-collection-panel 
+      button(onclick="setPanelView(createPanel, htmlElements.createPanel);") Create New
+  section#storage
+   ul#data
+  input#add(type='image', src='images/add.png', onclick='database.addData(event).getData();')
+  script(src="/view-collections.js")
+  script(src="/script.js")

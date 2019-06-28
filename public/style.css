@@ -1,0 +1,297 @@
+#data{
+  list-style: none;
+  padding: 0;
+}
+.mc {
+  font-family: "Trebuchet MS", "Lucida Sans";
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 20px solid #364a49;
+  box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+             -2px -2px 5px 0 rgba(0,0,0,.1),
+              2px 2px 5px 0 rgba(0,0,0,.1),
+             -2px 2px 5px 0 rgba(0,0,0,.1);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.smc {
+  font-family: "Trebuchet MS", "Lucida Sans";
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 20px solid #507574; 
+  box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+             -2px -2px 5px 0 rgba(0,0,0,.1),
+              2px 2px 5px 0 rgba(0,0,0,.1),
+             -2px 2px 5px 0 rgba(0,0,0,.1);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.c {
+  font-family: "Trebuchet MS", "Lucida Sans";
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 20px solid #63b7b4; 
+  box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+             -2px -2px 5px 0 rgba(0,0,0,.1),
+              2px 2px 5px 0 rgba(0,0,0,.1),
+             -2px 2px 5px 0 rgba(0,0,0,.1);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.sc {
+  font-family: "Trebuchet MS", "Lucida Sans";
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 20px solid #54e2df; 
+  box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+             -2px -2px 5px 0 rgba(0,0,0,.1),
+              2px 2px 5px 0 rgba(0,0,0,.1),
+             -2px 2px 5px 0 rgba(0,0,0,.1);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.nd {
+  font-family: "Trebuchet MS", "Lucida Sans";
+  padding: 7px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 20px solid #e04c32; 
+  box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+             -2px -2px 5px 0 rgba(0,0,0,.1),
+              2px 2px 5px 0 rgba(0,0,0,.1),
+             -2px 2px 5px 0 rgba(0,0,0,.1);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  border-left: 1px solid #648a8e;
+  width: 90%;
+}
+
+td, th {
+  color: #669;
+  padding: 5px 10px;
+  border-collapse: collapse;
+}
+
+th {
+  border-bottom: 1px solid #648a8e;
+}
+
+th textarea {
+  border: white;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  transition: all .2s;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans";
+  letter-spacing: 2px;
+  font-size: 16px;
+  color: #669;
+  font-weight: bold;
+  resize: none;
+}
+
+td textarea {
+  border: white;
+  width: 100%;
+  height: 100px;
+  outline: none;
+  transition: all .2s;
+  font-family: "Trebuchet MS", "Lucida Sans";
+  letter-spacing: 2px;
+  font-size: 16px;
+  color: #669;
+  resize:none;
+}
+
+input {
+  outline: none;
+}
+
+.table-button {
+  width: 30%;
+}
+
+.table-button input {
+  width: 30px;
+}
+
+select {
+  border: 1px solid white;
+  text-align: left;
+  font-family: "Trebuchet MS", "Lucida Sans";
+  letter-spacing: 2px;
+  font-size: 16px;
+  color: #669;
+  font-weight: bold;
+}
+
+option {
+  padding: 0px;
+}
+
+#storage {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.data-block button{
+  display: inline;
+  position: relative;
+}
+
+#add {
+  width: 35px;
+  margin-left: 49%;
+}
+
+header {
+  height: auto;
+  display: flex;
+  font-family: Gill Sans, sans-serif;
+  box-shadow: 3px 6px 3px rgba(0, 0, 0, 0.1);
+}
+
+header>div:first-child {
+  background: #ffffff;
+  width: 60%;
+  position: relative;
+  text-align: center;
+  border: #97a597 10px solid;
+  font-size: large;
+  font-weight: 500;
+}
+
+header>div:first-child::after {
+  content: "";
+  padding: 100px;
+}
+
+header>div:last-child {
+  background: #97a597;
+  width: 40%;
+  position: relative;
+  text-align: center;
+  border: #97a597 10px solid;
+  color: #0e290d;
+  font-size: large;
+  font-weight: 500;
+}
+
+.select-collection-panel {
+  position: relative;
+  top: 25%;
+}
+
+#list-collection {
+  width: 35%;
+  border: #5e735d 1px solid;
+}
+
+#list-collection:focus {
+  outline: none;
+}
+
+.create-collection-panel, .edit-collection-panel {
+  position: relative;
+  top: 5%;
+}
+
+.open-collection-panel {
+  position: relative;
+  top: 25%;
+}
+
+.open-collection-panel button {
+  width: 40%;
+  height: 20%;
+  font-size: 18px;
+}
+
+.description-collection{
+  margin-bottom: 5px;
+}
+
+#description-update, #description-create {
+  width: 40%;
+  height: 25%;
+  resize: none;
+}
+
+header button{
+  border-radius: 10px;
+  background: #f3f3f3;
+  color: #3a3636;
+  padding: 3px;
+  position: relative;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.22);
+  width: 14%;
+  color: #1e2f22;
+}
+
+header button:active{
+  background: #dadada;
+}
+
+header button:focus {
+  outline: none;
+}
+
+.create-collection-panel input, .create-collection-panel textarea{
+  border: 1px solid #667363;
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    display: block;
+  }
+
+  header>div:first-child{
+    width: 100%;
+    border-color: white;
+  }
+
+  header>div:last-child{
+    width: 100%;
+  }
+ 
+ header>div:last-child button {
+    height: 30px;
+    width: auto;
+    font-size: 14px;
+  }
+
+  header>div:first-child button {
+    height: 20px;
+    width: 65px;
+    font-size: 10px;
+  }
+
+}
+
+.attention-line {
+  width: 80%;
+  height: 200px;
+  display: block;
+  position: fixed;
+  background: white;
+}
+
+.attention-line p {
+  text-align: center;
+  font-family: Gill Sans, sans-serif;
+  font-size: 18px;
+}
+
+
