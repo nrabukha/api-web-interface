@@ -55,7 +55,7 @@ const htmlElements = {};
 htmlElements.selectPanel = `<div class="select-collection-panel">
   <span>Collections: </span>
   <select id="list-collection"></select>
-  <button id="load-collection" onclick="database.getData();">Load</button>    <button id="edit-collection" onclick="setPanelView(selectPanel, htmlElements.editPanel, testFunc);">Edit</button>
+  <button id="load-collection" onclick="database.getData();">Load</button>    <button id="edit-collection" onclick="setPanelView(selectPanel, htmlElements.editPanel, editPanel);">Edit</button>
   <button id="delete-collection" onclick="collections.deleteCollection().getCollection();">Delete</button>
   </div>`;
 

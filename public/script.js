@@ -186,7 +186,7 @@ collections.deleteCollection = function (buttonEvent) {
 
 addEventListener('load', collections.getCollection.bind(collections));
 
-const testFunc = (id) => {
+const editPanel = (id) => {
   collections.getCollectionById(id, (currentCollection) => {
     document.getElementById('name-update').value = currentCollection.name;
     document.getElementById('description-update').value = currentCollection.description;

@@ -9,7 +9,7 @@ html
      span Collections: 
      select#list-collection
      button#load-collection(onclick="database.getData();") Load
-     button#edit-collection(onclick="setPanelView(selectPanel, htmlElements.editPanel, testFunc);") Edit
+     button#edit-collection(onclick="setPanelView(selectPanel, htmlElements.editPanel, editPanel);") Edit
      button#delete-collection(onclick="collections.deleteCollection().getCollection();") Delete
    div
      .open-collection-panel 
