@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <header>
+        <div>
+            <div class="select-collection-panel"><span>Collections: </span><select id="list-collection"></select><button
+                    id="load-collection" onclick="database.getData();">Load</button><button id="edit-collection"
+                    onclick="setPanelView(selectPanel, htmlElements.editPanel, editPanel);">Edit</button><button
+                    id="delete-collection" onclick="collections.deleteCollection().getCollection();">Delete</button>
+            </div>
+        </div>
+        <div>
+            <div class="open-collection-panel"> <button
+                    onclick="setPanelView(createPanel, htmlElements.createPanel);">Create New</button></div>
+        </div>
+    </header>
+    <section id="storage">
+        <ul id="data"></ul>
+    </section><input id="add" type="image" src="/api-web-interface/images/add.png" onclick="database.addData(event).getData();">
+    <script src="/api-web-interface/view-collections.js"></script>
+    <script src="/api-web-interface/script.js"></script>
+</body>
+
+</html>

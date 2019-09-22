@@ -1,22 +1,26 @@
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 
 const state = {
   db: null
 };
 
-exports.connect = (url, done) => {
+let clientNew;
+
+exports.connect = (url, done, nameDb) => {
+
   if (state.db) {
-    return done();
+    clientNew.close();
   }
 
-  MongoClient.connect(url, { useNewUrlParser: true },
-    (err, client) => {
-      if (err) {
-        return done(err);
-      }
-      state.db = client.db('storage');
-      done();
-    });
+  mongoose.mongo.connect(url, { useNewUrlParser: true },
+	(err, client) => {
+		if(err) {
+			return done(err);
+		}
+		clientNew = client;
+    	state.db = client.db(nameDb);
+		done();
+	});
 };
 
 exports.get = () => {

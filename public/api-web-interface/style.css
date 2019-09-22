@@ -294,4 +294,40 @@ header button:focus {
   font-size: 18px;
 }
 
+.name-db {
+  background: #899e89;
+  color: white;
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Trebuchet MS", "Lucida Sans";
+}
+
+.name-db>span {
+  font-weight: bold;
+  color: #415841;
+}
+
+.logout {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Monteserrat', sans-serif;
+  transition: 0.4s ease-in-out;
+  color: #172119;
+  border-radius: 25px;
+  border: 3px solid #172119;
+}
+
+.logout:hover {
+  color: #172119;
+  background: #c4e2c4;
+}
 

@@ -5,15 +5,9 @@ class AjaxRequests {
     this.collection = collection;
   }
 
-  ajaxGetRequest(cb) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', `${this.url}?collection=${this.collection}`, true);
-    xhttp.send();
-    xhttp.onreadystatechange = () => {
-      if (xhttp.readyState == 4 && xhttp.status == 200) {
-        cb(xhttp);
-      }
-    };
+  ajaxGetRequest() {
+     return fetch(`${this.url}?collection=${this.collection}`)
+        .then(res => res.json()).catch(err => console.log('db not loaded'))
   };
 
   ajaxPostRequest(reqBody) {
@@ -56,11 +50,11 @@ class AjaxRequests {
   };
 }
 
-// let currentCollectionName = sessionStorage.getItem('collection');
 const database = new AjaxRequests('database', '');
 const dataSection = document.getElementById('data');
 
 database.getData = function () {
+  console.log(this);
   const listCollection = document.getElementById('list-collection');
   if (!listCollection[0]) {
     alert('Create new collection');
@@ -68,17 +62,16 @@ database.getData = function () {
   }
   const id = listCollection[listCollection.selectedIndex].value;
   this.collection = id;
-  const ajaxGetRequest = this.ajaxGetRequest.bind(this, (xhttp) => {
-    dataSection.innerHTML = databaseHtmlFormat(JSON.parse(xhttp.response));
-  });
-  setTimeout(ajaxGetRequest, 450);
+  this.ajaxGetRequest().then(recievedArr => {
+    dataSection.innerHTML = databaseHtmlFormat(recievedArr);
+  })
 };
 
 database.addData = function (buttonEvent) {
   const button = buttonEvent.target;
-  button.src = 'images/add-active.png';
+  button.src = '/api-web-interface/images/add-active.png';
   setTimeout(() => {
-    button.src = 'images/add.png';
+    button.src = '/api-web-interface/images/add.png';
   }, 450);
 
   this.ajaxPostRequest({
@@ -91,9 +84,9 @@ database.addData = function (buttonEvent) {
 
 database.updateData = function (buttonEvent) {
   const button = buttonEvent.target;
-  button.src = 'images/edit-active.png';
+  button.src = '/api-web-interface/images/edit-active.png';
   setTimeout(() => {
-    button.src = 'images/edit.png';
+    button.src = '/api-web-interface/images/edit.png';
   }, 450);
 
   const id = button.value;
@@ -110,7 +103,7 @@ database.updateData = function (buttonEvent) {
 
 database.deleteData = function (buttonEvent) {
   const button = buttonEvent.target;
-  button.src = 'images/remove-active.png';
+  button.src = '/api-web-interface/images/remove-active.png';
 
   const id = buttonEvent.target.value;
   this.ajaxDeleteRequest(id);
@@ -120,7 +113,7 @@ database.deleteData = function (buttonEvent) {
 addEventListener('load', () => {
   const attentionLine = document.createElement('DIV');
   const p = document.createElement('P');
-  const attentionText = document.createTextNode('Select and load a required collection');
+  const attentionText = document.createTextNode('Select and load the required collection');
   p.appendChild(attentionText);
   attentionLine.className = 'attention-line';
   attentionLine.appendChild(p);
@@ -131,20 +124,18 @@ const collections = new AjaxRequests('collections', 'collectionList');
 
 collections.getCollection = function () {
   const listCollection = document.getElementById('list-collection');
-  this.ajaxGetRequest((xhttp) => {
-    listCollection.innerHTML = collectionHtmlFormat(JSON.parse(xhttp.responseText));
+  this.ajaxGetRequest().then(arr =>  {
+    listCollection.innerHTML = collectionHtmlFormat(arr);
     listCollection.selectedIndex = sessionStorage.getItem('listIndex');
   });
 };
 
 collections.getCollectionById = function (id, cb) {
   this.selectedId = id;
-  let currentCollection;
-  this.ajaxGetRequest((xhttp) => {
-    const recievedObj = JSON.parse(xhttp.responseText);
-    currentCollection = recievedObj.find((obj) => {
+  this.ajaxGetRequest().then(recievedArr =>  {
+    const currentCollection = recievedArr.find((obj) => {
       return obj._id === id;
-    });
+    })
     if (cb) cb(currentCollection);
   });
   return this;

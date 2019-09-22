@@ -32,8 +32,8 @@ const databaseHtmlFormat = (dataArr) => {
            </th>
            <th><textarea type="text" id="title-${data._id}">${data.title}</textarea></th>
            <th class="table-button">
-             <input value="${data._id}" onclick="database.updateData(event)" type="image" src="images/edit.png">
-<input value="${data._id}" onclick="database.deleteData(event).getData();" type="image" src="images/remove.png"></th>
+             <input value="${data._id}" onclick="database.updateData(event)" type="image" src="/api-web-interface/images/edit.png">
+<input value="${data._id}" onclick="database.deleteData(event).getData();" type="image" src="/api-web-interface/images/remove.png"></th>
          </tr>
       </thead>
        <tbody>
